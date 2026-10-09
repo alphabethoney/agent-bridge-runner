@@ -1,0 +1,35 @@
+{
+  "default_timeout_s": 600,
+  "max_output_chars": 3500,
+  "allowed_roots": [
+    "D:\\",
+    "C:\\myTemp"
+  ],
+  "agents": {
+    "dsh": {
+      "exe": "D:\\Program Files (x86)\\dsh\\resources\\runtime\\cli\\bin\\dsh.cmd",
+      "args": [
+        "--profile",
+        "headless",
+        "--json"
+      ],
+      "kind": "dsh",
+      "default_permission": "workspace-write"
+    },
+    "codex": {
+      "exe": "${APPDATA}\\npm\\codex.cmd",
+      "args": [
+        "exec",
+        "--skip-git-repo-check",
+        "-s",
+        "workspace-write"
+      ],
+      "kind": "codex"
+    }
+  },
+  "allowed_permissions": [
+    "read-only",
+    "workspace-write",
+    "danger-full-access"
+  ]
+}
